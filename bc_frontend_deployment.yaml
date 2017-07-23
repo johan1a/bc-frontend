@@ -1,0 +1,19 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: bc-frontend
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: bc-frontend
+    spec:
+      containers:
+        - name: bc-frontend
+          image: index.docker.io/johan1a/bc.frontend:v0.0.3
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3001
+      imagePullSecrets:
+        - name: myregistrykey
