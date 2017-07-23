@@ -2,7 +2,9 @@
   (:require [bc.frontend.layout :as layout]
             [compojure.core :refer [defroutes GET]]
             [ring.util.http-response :as response]
-            [clojure.java.io :as io]))
+            [clojure.java.io :as io]
+            [bc.frontend.config :refer [env]]
+            ))
 
 (defn home-page []
   (layout/render
@@ -10,7 +12,8 @@
 
 (defn charts-home []
   (layout/render
-    "charts/charts_home.html" ))
+    "charts/charts_home.html" {:backend-host (env :bc-backend-service-host)
+                               :backend-port (env :bc-backend-service-port)}))
 
 (defn about-page []
   (layout/render "about.html"))

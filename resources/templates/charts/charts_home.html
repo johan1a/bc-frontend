@@ -55,7 +55,12 @@ function drawChart() {
   chart.setSelection([{row: 38, column: 1}]);
 }
 
-$.get( "http://localhost:3000/api/closes", function( data ) {
+
+var backendHost = "{{ backend-host }}";
+var backendPort = "{{ backend-port }}";
+var closesUrl = "http://" + backendHost + ":" + backendPort + "/api/closes";
+
+$.get( closesUrl, function( data ) {
   ajaxResult.push(data);
   console.log( "data: " + data );
   drawChart();
