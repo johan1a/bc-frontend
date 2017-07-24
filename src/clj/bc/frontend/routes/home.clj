@@ -4,9 +4,7 @@
             [ring.util.http-response :as response]
             [clojure.java.io :as io]
             [bc.frontend.http-util :as util]
-            [bc.frontend.backend-util :as backend]
-            [bc.frontend.config :refer [env]]
-            ))
+            [bc.frontend.backend-util :as backend]))
 
 (defn home-page []
   (layout/render
@@ -14,8 +12,7 @@
 
 (defn charts-home []
   (layout/render
-    "charts/charts_home.html" {:backend-host (env :bc-backend-service-host)
-                               :backend-port (env :bc-backend-service-port)}))
+    "charts/charts_home.html"))
 
 (defn about-page []
   (layout/render "about.html"))

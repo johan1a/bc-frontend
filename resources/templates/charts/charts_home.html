@@ -26,12 +26,14 @@ function drawChart() {
   }
   console.log( "drawChart() called");
 
-  var data = new google.visualization.DataTable();
-  data.addColumn('number', 'date');
-  data.addColumn('number', 'btc');
+  var table = new google.visualization.DataTable();
+  table.addColumn('number', 'date');
+  table.addColumn('number', 'btc');
 
   rows = ajaxResult[ajaxResult.length - 1];
-  data.addRows(
+//  console.log(rows);
+  console.log(rows[0]);
+  table.addRows(
       rows
   );
 
@@ -51,18 +53,16 @@ function drawChart() {
 
   var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
 
-  chart.draw(data, options);
+  chart.draw(table, options);
   chart.setSelection([{row: 38, column: 1}]);
 }
 
 
-var backendHost = "{{ backend-host }}";
-var backendPort = "{{ backend-port }}";
-var closesUrl = "http://" + backendHost + ":" + backendPort + "/api/closes";
+var closesPath = "/backend/api/closes";
 
-$.get( closesUrl, function( data ) {
-  ajaxResult.push(data);
-  console.log( "data: " + data );
+$.get( closesPath, function( data ) {
+  ajaxResult.push(JSON.parse(data));
+  console.log( "ajax returned" );
   drawChart();
 });
 
