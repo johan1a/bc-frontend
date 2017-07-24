@@ -3,6 +3,7 @@
             [compojure.core :refer [defroutes GET]]
             [ring.util.http-response :as response]
             [clojure.java.io :as io]
+            [bc.frontend.http-util :as util]
             [bc.frontend.config :refer [env]]
             ))
 
@@ -21,5 +22,11 @@
 (defroutes home-routes
   (GET "/" [] (home-page))
   (GET "/charts" [] (charts-home))
-  (GET "/about" [] (about-page)))
+  (GET "/about" [] (about-page))
+  (GET ["/backend/:path" :path #".*"] [path]
+    (let [host (env :bc-backend-service-host)
+          port (env :bc-backend-service-port)
+          url (str "http://" host ":" port "/" path)]
+        (println (str "url: " url))
+          (util/json-get url))))
 

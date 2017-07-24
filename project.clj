@@ -24,7 +24,8 @@
                  [ring-webjars "0.2.0"]
                  [ring/ring-core "1.6.2"]
                  [ring/ring-defaults "0.3.0"]
-                 [selmer "1.10.9"]]
+                 [selmer "1.10.9"]
+                 [clj-http "3.6.1"]]
 
   :min-lein-version "2.0.0"
 
