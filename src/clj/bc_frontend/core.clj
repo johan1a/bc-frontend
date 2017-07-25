@@ -1,8 +1,8 @@
-(ns bc.frontend.core
-  (:require [bc.frontend.handler :as handler]
+(ns bc-frontend.core
+  (:require [bc-frontend.handler :as handler]
             [luminus.repl-server :as repl]
             [luminus.http-server :as http]
-            [bc.frontend.config :refer [env]]
+            [bc-frontend.config :refer [env]]
             [clojure.tools.cli :refer [parse-opts]]
             [clojure.tools.logging :as log]
             [mount.core :as mount])

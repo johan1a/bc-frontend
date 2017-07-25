@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: bc-frontend
-          image: index.docker.io/johan1a/bc.frontend:v0.0.3
+          image: index.docker.io/johan1a/bc-frontend:v0.0.5
           imagePullPolicy: Always
           ports:
             - containerPort: 3001

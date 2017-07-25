@@ -1,6 +1,6 @@
-(ns bc.frontend.backend-util
-  (:require [bc.frontend.http-util :as util]
-            [bc.frontend.config :refer [env]]
+(ns bc-frontend.backend-util
+  (:require [bc-frontend.http-util :as util]
+            [bc-frontend.config :refer [env]]
             ))
 
 (defn relay

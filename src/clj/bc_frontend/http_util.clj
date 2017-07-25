@@ -1,4 +1,4 @@
-(ns bc.frontend.http-util
+(ns bc-frontend.http-util
   (:require [clj-http.client :as http]))
 
 (defn json-get

@@ -1,14 +1,14 @@
-(ns bc.frontend.middleware
-  (:require [bc.frontend.env :refer [defaults]]
+(ns bc-frontend.middleware
+  (:require [bc-frontend.env :refer [defaults]]
             [cognitect.transit :as transit]
             [clojure.tools.logging :as log]
-            [bc.frontend.layout :refer [*app-context* error-page]]
+            [bc-frontend.layout :refer [*app-context* error-page]]
             [ring.middleware.anti-forgery :refer [wrap-anti-forgery]]
             [ring.middleware.webjars :refer [wrap-webjars]]
             [muuntaja.core :as muuntaja]
             [muuntaja.format.transit :as transit-format]
             [muuntaja.middleware :refer [wrap-format wrap-params]]
-            [bc.frontend.config :refer [env]]
+            [bc-frontend.config :refer [env]]
             [ring.middleware.flash :refer [wrap-flash]]
             [immutant.web.middleware :refer [wrap-session]]
             [ring.middleware.defaults :refer [site-defaults wrap-defaults]])

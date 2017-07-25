@@ -1,11 +1,11 @@
-(ns bc.frontend.handler
+(ns bc-frontend.handler
   (:require [compojure.core :refer [routes wrap-routes]]
-            [bc.frontend.layout :refer [error-page]]
-            [bc.frontend.routes.home :refer [home-routes]]
+            [bc-frontend.layout :refer [error-page]]
+            [bc-frontend.routes.home :refer [home-routes]]
             [compojure.route :as route]
-            [bc.frontend.env :refer [defaults]]
+            [bc-frontend.env :refer [defaults]]
             [mount.core :as mount]
-            [bc.frontend.middleware :as middleware]))
+            [bc-frontend.middleware :as middleware]))
 
 (mount/defstate init-app
                 :start ((or (:init defaults) identity))

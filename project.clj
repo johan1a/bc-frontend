@@ -1,4 +1,4 @@
-(defproject bc.frontend "0.1.0-SNAPSHOT"
+(defproject bc-frontend "0.1.0-SNAPSHOT"
 
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
@@ -34,7 +34,7 @@
   :test-paths ["test/clj"]
   :resource-paths ["resources"]
   :target-path "target/%s/"
-  :main ^:skip-aot bc.frontend.core
+  :main ^:skip-aot bc-frontend.core
 
   :plugins [[lein-cprop "1.0.3"]
             [lein-immutant "2.1.0"]]
@@ -42,7 +42,7 @@
   :profiles
   {:uberjar {:omit-source true
              :aot :all
-             :uberjar-name "bc.frontend.jar"
+             :uberjar-name "bc-frontend.jar"
              :source-paths ["env/prod/clj"]
              :resource-paths ["env/prod/resources"]}
 

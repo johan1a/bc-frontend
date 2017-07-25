@@ -1,7 +1,7 @@
-(ns bc.frontend.test.handler
+(ns bc-frontend.test.handler
   (:require [clojure.test :refer :all]
             [ring.mock.request :refer :all]
-            [bc.frontend.handler :refer :all]))
+            [bc-frontend.handler :refer :all]))
 
 (deftest test-app
   (testing "main route"

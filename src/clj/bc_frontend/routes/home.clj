@@ -1,10 +1,10 @@
-(ns bc.frontend.routes.home
-  (:require [bc.frontend.layout :as layout]
+(ns bc-frontend.routes.home
+  (:require [bc-frontend.layout :as layout]
             [compojure.core :refer [defroutes GET]]
             [ring.util.http-response :as response]
             [clojure.java.io :as io]
-            [bc.frontend.http-util :as util]
-            [bc.frontend.backend-util :as backend]))
+            [bc-frontend.http-util :as util]
+            [bc-frontend.backend-util :as backend]))
 
 (defn home-page []
   (layout/render
